@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link rel="shortcut icon" type="imagex/png" href="./img/imagens/icon.ico">
+    <link rel="stylesheet" href="../css/stylePokedex.css">
+    <title>PokéDex</title>
+</head>
+<body>
+    
+
+    <nav class="navbar">
+        <div class="logo"><img src="./img/imagens/Pokemon-Logo.png" alt="logo pokemon"></div>
+
+        <div class="navbar-itens">
+
+            <a class="container_navbar_itens" id="container_navbar_itens_home" href="/">
+
+                <span></span>
+                <div class="container_itens">
+                    <span class="material-icons">home</span>
+                    <h2 id="material-text">Home</h2>                    
+                </div>
+                <span class="selection" id="selection_home"></span>
+
+            </a>
+            
+            <a class="container_navbar_itens" id="container_navbar_itens_pokedex" href="/pokedex">
+
+                <span></span>
+                <div class="container_itens_poke" id="container_itens_poke">
+
+                    <ul id="ulcircle">
+                        <li class="poke-line" id="poke-line1"></li>
+                        <li id="poke-circle"></li>
+                        <li class="poke-line" id="poke-line2"></li>
+                    </ul>                    
+                    <h2 id="material-text">Pokédex</h2>
+                    <span class="selection"></span>
+
+                </div>
+                <span class="selection" id="selection_pokedex"></span>
+
+            </a>
+
+            <a class="container_navbar_itens" id="container_navbar_itens_add" href="/cadastro">
+
+                <span></span>
+                <div class="container_itens">                
+                    <span class="material-icons">add</span>
+                    <h2 id="material-text">Add</h2>
+                    <span class="selection add"></span>
+                </div>
+                <span class="selection" id="selection_add"></span>
+
+            </a>            
+
+        </div>
+
+        <div class="logo"><img src="./img/imagens/Pokemon-Logo.png" alt="logo pokemon"></div>
+
+    </nav>
+
+    <main>
+        
+    
+        <div class="main__filtro">
+            
+                
+            <input type="text" id="input_pesquisa" name="fname" placeholder="Pesquisar...">
+
+            <form  class="navbar_itens" id="filtros">
+        
+                <select name="filtro" id="filtro">
+                    <option value="filtro" action="/pokedexfiltro" method="post">Tipo:</option>
+                    <option value="planta" action="/pokedexfiltro" method="post">Planta</option>
+                    <option value="fogo" action="/pokedexfiltro" method="post">Fogo</option>
+                    <option value="agua" action="/pokedexfiltro" method="post">Água</option>
+                    <option value="choque" action="/pokedexfiltro" method="post">Choque</option>
+                </select>                         
+            
+                <select name="ordem" id="ordem">
+                    <option value="ordenar">Ordenar</option>
+                    <option value="nome">Nome</option>
+                    <option value="tipo">Tipo</option>
+                    <option value="dano">Dano</option>
+                    <option value="vida">Vida</option>
+                    <option value="defesa">Defesa</option>
+
+                </select>                
+
+            </form>
+
+        </div>
+        
+
+    
+
+        <div class="main__cards">
+
+            <% pokedex.forEach((pokemon) =>{%>
+
+        
+                <div class="container_card" id="container_card">
+    
+                    <div class="card" id="card">
+    
+                        <h2 id="numero">Nº <%= pokemon.id %></h2>
+                        <img src="<%= pokemon.imagem %>" class="card_img" alt="Imagem" title="" />
+                        <h2 id="nome"><%= pokemon.nome %></h2>                                                   
+                        
+                    </div>
+                    <div class="lista" id="lista">
+                        <div class="lista__row">
+                            <span class="label">Tipo: </span><span class="label_resp"><%= pokemon.tipo %></span>
+                        </div>
+                        <div class="lista__row">
+                            <span class="label">Categoria: </span><span class="label_resp"><%= pokemon.categoria %></span>
+                        </div>
+                        <div class="list__row">
+                            <span class="label">Habilidade: </span><span class="label_resp"><%= pokemon.habilidade %></span>
+                        </div>
+                        <div class="list__row">
+                            <span class="label">Altura: </span><span class="label_resp"><%= pokemon.altura %> cm</span>
+                        </div>                    
+                        <div class="list__row">
+                            <span class="label">Peso: </span><span class="label_resp"><%= pokemon.peso %> kg</span>
+                        </div>
+                        <div class="list__descricao">
+                            <span class="label">Descrição: </span><span class="label_resp"><%= pokemon.descricao %></span>
+            
+                        </div>
+            
+                        
+                    </div>             
+    
+                </div>
+            <% }) %>
+
+
+
+        </div>
+
+
+    </main>
+
+
+
+
+    <footer>
+
+        <div>
+
+        </div>
+
+        <div id="copyright">
+            <p>Copyright &copy; 2022 <a href="https://www.linkedin.com/in/labupaim" target="_blank"> Victor Paim </a> & <a href="https://github.com/LHcouto" target="_blank">Luis Couto </a> - Todos os direitos reservados</p>
+        </div>
+
+    </footer>
+
+
+    <script type="text/javascript" src="./js/script__pokedex.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link rel="shortcut icon" type="imagex/png" href="./img/imagens/icon.ico">
+    <link rel="stylesheet" href="./css/styleCadastro.css">
+    <title>PokéDex</title>
+</head>
+<body> 
+    <nav class="navbar">
+        <div class="logo"><img src="./img/imagens/Pokemon-Logo.png" alt="logo pokemon"></div>
+
+        <div class="navbar-itens">
+
+            <a class="container_navbar_itens" id="container_navbar_itens_home" href="/">
+
+                <span></span>
+                <div class="container_itens">
+                    <span class="material-icons">home</span>
+                    <h2 id="material-text">Home</h2>                    
+                </div>
+                <span class="selection" id="selection_home"></span>
+
+            </a>
+            
+            <a class="container_navbar_itens" id="container_navbar_itens_pokedex" href="/pokedex">
+
+                <span></span>
+                <div class="container_itens_poke" id="container_itens_poke">
+
+                    <ul id="ulcircle">
+                        <li class="poke-line" id="poke-line1"></li>
+                        <li id="poke-circle"></li>
+                        <li class="poke-line" id="poke-line2"></li>
+                    </ul>                    
+                    <h2 id="material-text">Pokédex</h2>
+                    <span class="selection"></span>
+
+                </div>
+                <span class="selection" id="selection_pokedex"></span>
+
+            </a>
+
+            <a class="container_navbar_itens" id="container_navbar_itens_add" href="/cadastro">
+
+                <span></span>
+                <div class="container_itens">                
+                    <span class="material-icons">add</span>
+                    <h2 id="material-text">Add</h2>
+                    <span class="selection add"></span>
+                </div>
+                <span class="selection" id="selection_add"></span>
+
+            </a>            
+
+        </div>
+
+        <div class="logo"><img src="./img/imagens/Pokemon-Logo.png" alt="logo pokemon"></div>
+
+    </nav>
+    
+    <main>
+
+        <form action="/cadastro"  class="card_form" id="card_form" method="post">
+
+            <div class="card_form_row">
+                <label for="id">Número:</label>
+                <input class="form_input" type="text" id="id" name="id" maxlength="3" placeholder="Ex.: 001">
+            </div>
+
+            <div class="card_form_row">
+                <label for="nome">Nome:</label>
+                <input class="form_input" type="text" id="nome" name="nome" placeholder="Ex.: Pikachu">
+            </div>
+
+            <div class="card_form_row">
+                <label for="tipo">Tipo:</label>
+                <input class="form_input" type="text" id="tipo" name="tipo" placeholder="Ex.: Choque">
+            </div>
+            
+            <div class="card_form_row">
+                <label for="habilidade">Habilidade:</label>
+                <input class="form_input" type="text" id="habilidade" name="habilidade" placeholder="Ex.: Estático">
+            </div>
+
+            <div class="card_form_row">
+                <label for="categoria">Categoria:</label>
+                <input class="form_input" type="text" id="categoria" name="categoria" placeholder="Ex.: Rato">
+            </div>
+            
+
+            <div class="card_form_row">
+                <label for="altura">Altura:</label>
+                <input class="form_input" type="text" id="altura" name="altura" maxlength="3" placeholder="Ex.: 40">
+            </div>
+
+            <div class="card_form_row">
+                <label for="peso">Peso:</label>
+                <input class="form_input" type="text" id="peso" name="peso" maxlength="3" placeholder="Ex.: 6">
+            </div>
+
+            <label for="imagem">Imagem:</label>
+            <textarea class="form_input" type="text" id="imagem" name="imagem" placeholder="http//"></textarea>
+            <label for="descricao">Descrição:</label>
+            <textarea class="form_input" type="text" id="descricao" name="descricao" ></textarea>
+
+            <button class="submit_cadastro" id="submit_cadastro" alt="Cadastrar" onclick="validar__cadastro()" >Cadastrar</button>
+
+        </form>
+
+        <div class="cadastro__alert" id="cadastro__alert">
+            <h3 id="cadastro__alert__title">
+                Pokemon Cadastrado com Sucesso!
+            </h3>
+            <h3 id="cadastro__alert__close">
+                X
+            </h3>
+            
+        </div>
+
+    </main>
+
+    <footer>
+
+        <div>
+
+        </div>
+
+        <div id="copyright">
+            <p>Copyright &copy; 2022 <a href="https://www.linkedin.com/in/labupaim" target="_blank"> Victor Paim </a> & <a href="https://github.com/LHcouto" target="_blank">Luis Couto </a> - Todos os direitos reservados</p>
+        </div>
+
+    </footer>
+
+
+    <script type="text/javascript" src="../js/script__cadastro.js"></script>
+</body>
+</html>
